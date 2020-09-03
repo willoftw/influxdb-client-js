@@ -12,7 +12,7 @@ describe('FetchTransport', () => {
   describe('constructor', () => {
     it('creates the transport with url', () => {
       const options = {
-        url: 'http://test:9999',
+        url: 'http://test:8086',
       }
       const transport: any = new FetchTransport(options)
       expect(transport.defaultHeaders).to.deep.equal({
@@ -23,7 +23,7 @@ describe('FetchTransport', () => {
     })
     it('creates the transport with url and token', () => {
       const options = {
-        url: 'http://test:9999',
+        url: 'http://test:8086',
         token: 'a',
       }
       const transport: any = new FetchTransport(options)
@@ -36,7 +36,7 @@ describe('FetchTransport', () => {
     })
   })
   describe('request', () => {
-    const transport = new FetchTransport({url: 'http://test:9999'})
+    const transport = new FetchTransport({url: 'http://test:8086'})
     it('receives json data', async () => {
       emulateFetchApi({
         headers: {'content-type': 'application/json'},
@@ -137,7 +137,7 @@ describe('FetchTransport', () => {
     })
   })
   describe('send', () => {
-    const transport = new FetchTransport({url: 'http://test:9999'})
+    const transport = new FetchTransport({url: 'http://test:8086'})
     function fakeCallbacks(): any {
       return {
         next: sinon.fake(),
